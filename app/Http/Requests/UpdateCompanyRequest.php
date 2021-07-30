@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreCompanyRequest extends FormRequest
+class UpdateCompanyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +26,12 @@ class StoreCompanyRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'email' => ['required', 'email', 'unique:companies'],
-            'website' => ['required', 'url', 'unique:companies'],
+            'email' => [
+                Rule::unique('companies')->ignore($this->company)
+            ],
+            'website' => [
+                Rule::unique('companies')->ignore($this->company)
+            ],
             'logo' => 'image'
         ];
     }

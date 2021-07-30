@@ -17,7 +17,7 @@
                     {{ __('You are logged in!') }}
 
                     <div>
-                        <a href="" class="btn btn-sm btn-primary mt-3">{{ __('Ir a la web') }}</a>
+                        <a href="{{ route('admin.companies.index') }}" class="btn btn-sm btn-primary mt-3">{{ __('Ir a la web') }}</a>
                     </div>
                 </div>
             </div>

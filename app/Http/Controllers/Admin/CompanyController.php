@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCompanyRequest;
+use App\Http\Requests\UpdateCompanyRequest;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -14,7 +17,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Company::latest()->paginate(10);
+        return view('admin.companies.index', compact('companies'));
     }
 
     /**
@@ -24,7 +28,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.companies.create');
     }
 
     /**
@@ -33,9 +37,15 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCompanyRequest $request)
     {
-        //
+        $dataValidated = $request->validated();
+        if ($request->hasFile('logo')) {
+            $dataValidated['logo'] = $request->logo->getClientOriginalName();
+            $request->logo->move('images', $dataValidated['logo']);
+        }
+        Company::create($dataValidated);
+        return redirect()->route('admin.companies.create')->with('message', 'La empresa fue creada satisfactoriamente');
     }
 
     /**
@@ -44,9 +54,9 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Company $company)
     {
-        //
+        return view('admin.companies.show', compact('company'));
     }
 
     /**
@@ -55,9 +65,9 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Company $company)
     {
-        //
+        return view('admin.companies.edit', compact('company'));
     }
 
     /**
@@ -67,9 +77,15 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCompanyRequest $request, Company $company)
     {
-        //
+        $dataValidated = $request->validated();
+        if ($request->hasFile('logo')) {
+            $dataValidated['logo'] = $request->logo->getClientOriginalName();
+            $request->logo->move('images', $dataValidated['logo']);
+        }
+        $company->update($dataValidated);
+        return redirect()->route('admin.companies.edit', compact('company'))->with('message', 'La empresa fue actualizada satisfactoriamente');
     }
 
     /**
@@ -78,8 +94,9 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Company $company)
     {
-        //
+        $company->delete();
+        return redirect()->route('admin.companies.index')->with('message', 'La empresa fue eliminada satisfactoriamente');
     }
 }

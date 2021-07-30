@@ -23,10 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::group(['middleware' => 'auth'], function() {
     
-    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function() {
+    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'is_admin'], function() {
         
         Route::resource('companies', CompanyController::class);
         Route::resource('companies.employees', EmployeeController::class);
