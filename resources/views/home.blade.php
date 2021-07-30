@@ -15,6 +15,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <div>
+                        <a href="" class="btn btn-sm btn-primary mt-3">{{ __('Ir a la web') }}</a>
+                    </div>
                 </div>
             </div>
         </div>
