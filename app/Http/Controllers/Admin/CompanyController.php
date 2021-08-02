@@ -40,11 +40,14 @@ class CompanyController extends Controller
     public function store(StoreCompanyRequest $request)
     {
         $dataValidated = $request->validated();
+
         if ($request->hasFile('logo')) {
             $dataValidated['logo'] = $request->logo->getClientOriginalName();
             $request->logo->move('images', $dataValidated['logo']);
         }
+
         Company::create($dataValidated);
+
         return redirect()->route('admin.companies.create')->with('message', 'La empresa fue creada satisfactoriamente');
     }
 
@@ -56,7 +59,9 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return view('admin.companies.show', compact('company'));
+        $employees = $company->employees()->paginate(10);
+
+        return view('admin.companies.show', compact('company', 'employees'));
     }
 
     /**
@@ -80,11 +85,14 @@ class CompanyController extends Controller
     public function update(UpdateCompanyRequest $request, Company $company)
     {
         $dataValidated = $request->validated();
+
         if ($request->hasFile('logo')) {
             $dataValidated['logo'] = $request->logo->getClientOriginalName();
             $request->logo->move('images', $dataValidated['logo']);
         }
+
         $company->update($dataValidated);
+
         return redirect()->route('admin.companies.edit', compact('company'))->with('message', 'La empresa fue actualizada satisfactoriamente');
     }
 
@@ -97,6 +105,7 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         $company->delete();
+
         return redirect()->route('admin.companies.index')->with('message', 'La empresa fue eliminada satisfactoriamente');
     }
 }

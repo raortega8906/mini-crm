@@ -31,6 +31,7 @@
                                     <th>{{ _('Email') }}</th>
                                     <th>{{ _('Web') }}</th>
                                     <th>{{ _('Logo') }}</th>
+                                    <th>{{ __('Cant. Empleados') }}</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -40,7 +41,26 @@
                                         <td>{{ $company->name }}</td>
                                         <td>{{ $company->email }}</td>
                                         <td>{{ $company->website }}</td>
-                                        <td>{{ $company->logo }}</td>
+                                        <td>
+                                            @if ($company->logo)
+                                                <a href="{{ asset('images/' . $company->logo) }}">
+                                                    <img class="img-thumbnail"
+                                                        src="{{ asset('images/' . $company->logo) }}" alt="" width="100"
+                                                        height="">
+                                                </a>
+                                            @else
+                                                {{ __('Sin logo') }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($company->employees->count() == 0)
+                                                {{ __('Sin empleados') }}
+                                            @elseif ($company->employees->count() == 1)
+                                            {{ $company->employees->count().__(' empleado') }}
+                                            @else
+                                                {{ $company->employees->count().__(' empleados') }}
+                                            @endif
+                                        </td>
                                         <td class="d-flex">
                                             <a href="{{ route('admin.companies.show', $company) }}"
                                                 class="btn btn-sm btn-primary mx-1">{{ _('Ver') }}</a>

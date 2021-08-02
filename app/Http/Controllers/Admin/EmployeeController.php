@@ -3,28 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreEmployeeRequest;
+use App\Models\Company;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Company $company)
     {
-        //
+        return view('admin.employees.create', compact('company'));
     }
 
     /**
@@ -33,9 +26,12 @@ class EmployeeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEmployeeRequest $request, Company $company)
     {
-        //
+        $company->employees()->create($request->validated());
+
+        return redirect()->route('admin.companies.employees.create', compact('company'))
+            ->with('message', 'El empleado fue creado satisfactoriamente');
     }
 
     /**
@@ -44,9 +40,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Company $company, Employee $employee)
     {
-        //
+        return view('admin.employees.show', compact('company', 'employee'));
     }
 
     /**
@@ -55,9 +51,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Company $company, Employee $employee)
     {
-        //
+        return view('admin.employees.edit', compact('company', 'employee'));
     }
 
     /**
@@ -67,9 +63,12 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreEmployeeRequest $request, Company $company, Employee $employee)
     {
-        //
+        $employee->update($request->validated());
+
+        return redirect()->route('admin.companies.employees.edit', compact('company', 'employee'))
+            ->with('message', 'El empleado fue actualizado satisfactoriamente');
     }
 
     /**
@@ -78,8 +77,11 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Company $company, Employee $employee)
     {
-        //
+        $employee->delete();
+
+        return redirect()->route('admin.companies.show', compact('company', 'employee'))
+            ->with('message', 'El empleado fue eliminado satisfactoriamente');
     }
 }

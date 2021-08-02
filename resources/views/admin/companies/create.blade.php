@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    
-    <div class="container-fluid">
+
+    <div class="container">
         @if (session('message'))
             <div class="alert alert-success" role="alert">
                 {{ session('message') }}
@@ -14,7 +14,8 @@
             </div>
 
             <div>
-                <a href="{{ route('admin.companies.index') }}" class="btn btn-sm btn-primary mt-3 mx-3">{{ _('Listado de empresas') }}</a>
+                <a href="{{ route('admin.companies.index') }}"
+                    class="btn btn-sm btn-primary mt-3 mx-3">{{ _('Listado de empresas') }}</a>
             </div>
 
             <div class="card-body">
@@ -42,7 +43,7 @@
                                 <input id="logo" class="form-control" type="file" name="logo">
                             </div>
                             <button type="submit" class="btn btn-sm btn-success">{{ _('Crear la empresa') }}</button>
-                        </form>             
+                        </form>
                     </div>
                 </div>
             </div>
