@@ -1,62 +1,86 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Mini-CRM
 
-## About Laravel
+Un panel de administración para gestionar empresas. Básicamente, proyecto para gestionar empresas y sus empleados. Este proyecto es basado en una publicación del blog de Laravel Daily, [How to Test Junior Laravel Developer Skills: Sample Project](http://laraveldaily.com/test-junior-laravel-developer-sample-project), es un proyecto de muestra para desarrolladores junior en Laravel.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Desarrollado en Laravel 8.40.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Requerimientos a cumplir
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* [x] Autenticación básica de Laravel: capacidad de iniciar sesión como administrador.
+* [x] Use semillas de base de datos (seed) para crear el primer usuario con el correo electrónico `admin@admin.com` y la contraseña `password`.
+* [x] Funcionalidad CRUD (Create / Read / Update / Delete) para los dos elementos: Empresas y Empleados.
+* [x] La tabla de BD de Empresas consta de estos campos:: Nombre (obligatorio), email, logotipo (mínimo 100×100), sitio web.
+* [x] La tabla de BD de Empleados consta de estos campos: Nombre (obligatorio), apellido (obligatorio), empresa (llave foránea para empresas), email, teléfono.
+* [x] Utilice migraciones de BD para crear los esquemas anteriores.
+* [x] Almacene los logotipos de las. Empresas en la carpeta `storage/app/public` y hágalo accesible desde el público.
+* [x] Use controladores de recursos (resource) básicos de Laravel con métodos predeterminados: index,  create, store, etc.
+* [x] Usa la función de validación de Laravel, usando clases de solicitud (request).
+* [x] Use la paginación de Laravel para mostrar. La lista de Empresas/Empleados, 10 entradas por página.
+* [x] Use Laravel/UI como tema de diseño predeterminado basado en Bootstrap, pero elimine la capacidad de registro.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Requerimientos extras (Opcional)
 
-## Laravel Sponsors
+* [ ] Use la biblioteca Datatables.net para mostrar la tabla, sin representación del lado del servidor.
+* [ ] Utilice un tema front-end más complicado como AdminLTE.
+* [ ] Notificación por email: envíe un email cada vez que agregue una nueva empresa (use Mailgun or Mailtrap).
+* [ ] Haga que el proyecto sea Multi-lenguaje (usando la carpeta `resources/lang`)
+* [ ] Pruebas básicas con phpunit.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-### Premium Partners
+## Como instalar
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+1. Clonar el repositorio : `git clone https://github.com/raortega8906/mini-crm.git`
+2. `$ cd Mini-CRM`
+3. `$ composer install`
+4. `$ cp .env.example .env`
+5. `$ php artisan key:generate`
+6. Crear **BD en MySQL** o **SQLite**
+7. **Credenciales de BD** en el archivo `.env`
+8. `$ php artisan migrate --seed`
+9. `$ php artisan serve`
+10. Iniciar sesión con:
+    - email : `admin@admin.com`
+    - password : `password`
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Importante
 
-## Code of Conduct
+Para lo anterior es necesario que tenga PHP, MySQL, etc, instalado localmente en su pc, para otras opciones, consulte las recomendaciones de Laravel.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Retroalimentación
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+No dude en enviar comentarios y problemas encontrados vía email.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Video del desarrollo del proyecto (Requerimientos principales)
+
+Nota: No disponible aún.
+
+---
+
+## Demo desplegado
+
+Nota: No disponible aún.
+
+---
+
+## Licencia 
+
+El proyecto es de código abierto.
+
+---
+
+## Próximos pasos
+
+Ahora puede comenzar a usar Mini-CRM libremente.
