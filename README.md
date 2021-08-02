@@ -2,16 +2,9 @@
 
 # Mini-CRM
 
-Un panel de administración para gestionar empresas. Básicamente, proyecto para gestionar empresas y sus empleados. Este proyecto es basado en una publicación del blog de Laravel Daily, [How to Test Junior Laravel Developer Skills: Sample Project](http://laraveldaily.com/test-junior-laravel-developer-sample-project), es un proyecto de muestra para desarrolladores junior en Laravel.
+Es un proyecto para gestionar empresas y sus empleados a través de un panel de administración. Este proyecto es basado en una publicación del blog de Laravel Daily, [How to Test Junior Laravel Developer Skills: Sample Project](http://laraveldaily.com/test-junior-laravel-developer-sample-project), es un proyecto de muestra para desarrolladores junior en Laravel.
 
----
-
-# Desarrollado en Laravel 8.40.
-
----
-
-## Requerimientos a cumplir
-
+### Objetivos
 * [x] Autenticación básica de Laravel: capacidad de iniciar sesión como administrador.
 * [x] Use semillas de base de datos (seed) para crear el primer usuario con el correo electrónico `admin@admin.com` y la contraseña `password`.
 * [x] Funcionalidad CRUD (Create / Read / Update / Delete) para los dos elementos: Empresas y Empleados.
@@ -24,18 +17,17 @@ Un panel de administración para gestionar empresas. Básicamente, proyecto para
 * [x] Use la paginación de Laravel para mostrar. La lista de Empresas/Empleados, 10 entradas por página.
 * [x] Use Laravel/UI como tema de diseño predeterminado basado en Bootstrap, pero elimine la capacidad de registro.
 
-### Requerimientos extras (Opcional)
-
+#### Objetivos adicionales
 * [ ] Use la biblioteca Datatables.net para mostrar la tabla, sin representación del lado del servidor.
 * [ ] Utilice un tema front-end más complicado como AdminLTE.
 * [ ] Notificación por email: envíe un email cada vez que agregue una nueva empresa (use Mailgun or Mailtrap).
 * [ ] Haga que el proyecto sea Multi-lenguaje (usando la carpeta `resources/lang`)
 * [ ] Pruebas básicas con phpunit.
 
----
-
 ## Como instalar
+Para ejecutar este demo es necesario que tenga instalado PHP, MySQL, Apache o Nginx. Para mas información, consulte las recomendaciones de [Laravel](https://laravel.com/docs/8.x).
 
+### Pasos:
 1. Clonar el repositorio : `git clone https://github.com/raortega8906/mini-crm.git`
 2. `$ cd Mini-CRM`
 3. `$ composer install`
@@ -49,38 +41,5 @@ Un panel de administración para gestionar empresas. Básicamente, proyecto para
     - email : `admin@admin.com`
     - password : `password`
 
----
-
-## Importante
-
-Para lo anterior es necesario que tenga PHP, MySQL, etc, instalado localmente en su pc, para otras opciones, consulte las recomendaciones de Laravel.
-
----
-
-## Retroalimentación
-
-No dude en enviar comentarios y problemas encontrados vía email.
-
----
-
-## Video del desarrollo del proyecto (Requerimientos principales)
-
-Nota: No disponible aún.
-
----
-
-## Demo desplegado
-
-Nota: No disponible aún.
-
----
-
-## Licencia 
-
+## Licencia
 El proyecto es de código abierto.
-
----
-
-## Próximos pasos
-
-Ahora puede comenzar a usar Mini-CRM libremente.
