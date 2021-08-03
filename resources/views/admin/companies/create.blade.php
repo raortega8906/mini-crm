@@ -15,7 +15,7 @@
 
             <div>
                 <a href="{{ route('admin.companies.index') }}"
-                    class="btn btn-sm btn-primary mt-3 mx-3">{{ _('Listado de empresas') }}</a>
+                   class="btn btn-sm btn-primary mt-3 mx-3">{{ _('Listado de empresas') }}</a>
             </div>
 
             <div class="card-body">

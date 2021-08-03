@@ -25,7 +25,7 @@ Es un proyecto para gestionar empresas y sus empleados a través de un panel de 
 * [ ] Pruebas básicas con phpunit.
 
 ## Como instalar
-Para ejecutar este demo es necesario que tenga instalado PHP, MySQL, Apache o Nginx. Para mas información, consulte las recomendaciones de [Laravel](https://laravel.com/docs/8.x).
+Para ejecutar este proyecto es necesario que tenga instalado PHP, MySQL, Apache o Nginx. Para mas información, consulte las recomendaciones de [Laravel](https://laravel.com/docs/8.x).
 
 ### Pasos:
 1. Clonar el repositorio : `git clone https://github.com/raortega8906/mini-crm.git`
@@ -33,13 +33,21 @@ Para ejecutar este demo es necesario que tenga instalado PHP, MySQL, Apache o Ng
 3. `$ composer install`
 4. `$ cp .env.example .env`
 5. `$ php artisan key:generate`
-6. Crear **BD en MySQL** o **SQLite**
-7. **Credenciales de BD** en el archivo `.env`
+6. Crear BD en **MySQL** o **SQLite**
+7. Credenciales de BD en el archivo `.env`
 8. `$ php artisan migrate --seed`
 9. `$ php artisan serve`
 10. Iniciar sesión con:
     - email : `admin@admin.com`
     - password : `password`
 
+## Demo desplegado
+
+https://mini-crm.herokuapp.com/
+
 ## Licencia
 El proyecto es de código abierto.
+
+## Próximos pasos
+
+Ahora puede comenzar a usar Calendar libremente.

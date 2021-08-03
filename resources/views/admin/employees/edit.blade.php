@@ -26,7 +26,7 @@
             </div>
             <div class="mt-3 mx-3">
                 <a href="{{ route('admin.companies.show', $company) }}"
-                    class="btn btn-sm btn-primary">{{ __('Listado de empleados') }}</a>
+                   class="btn btn-sm btn-primary">{{ __('Listado de empleados') }}</a>
             </div>
             <div class="card-body">
                 <div class="card">
@@ -35,30 +35,31 @@
                     </div>
                     <div class="card-body">
                         <form action="{{ route('admin.companies.employees.update', [$company, $employee]) }}"
-                            method="POST">
+                              method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="name">{{ __('Nombre') }}</label>
                                 <input id="name" class="form-control" type="text" name="name"
-                                    value="{{ $employee->name }}">
+                                       value="{{ $employee->name }}">
                             </div>
                             <div class="form-group">
                                 <label for="last_name">{{ __('Apellidos') }}</label>
                                 <input id="last_name" class="form-control" type="text" name="last_name"
-                                    value="{{ $employee->last_name }}">
+                                       value="{{ $employee->last_name }}">
                             </div>
                             <div class="form-group">
                                 <label for="email">{{ __('Email') }}</label>
                                 <input id="email" class="form-control" type="email" name="email"
-                                    value="{{ $employee->email }}">
+                                       value="{{ $employee->email }}">
                             </div>
                             <div class="form-group">
                                 <label for="phone">{{ __('Web') }}</label>
                                 <input id="phone" class="form-control" type="text" name="phone"
-                                    value="{{ $employee->phone }}">
+                                       value="{{ $employee->phone }}">
                             </div>
-                            <button type="submit" class="btn btn-sm btn-success">{{ __('Actualizar empleado') }}</button>
+                            <button type="submit"
+                                    class="btn btn-sm btn-success">{{ __('Actualizar empleado') }}</button>
                         </form>
                     </div>
                 </div>

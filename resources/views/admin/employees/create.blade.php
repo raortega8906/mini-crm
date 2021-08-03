@@ -26,7 +26,7 @@
             </div>
             <div class="mt-3 mx-3">
                 <a href="{{ route('admin.companies.show', $company) }}"
-                    class="btn btn-sm btn-primary">{{ __('Listado de empleados') }}</a>
+                   class="btn btn-sm btn-primary">{{ __('Listado de empleados') }}</a>
             </div>
             <div class="card-body">
                 <div class="card">
