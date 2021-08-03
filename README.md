@@ -42,12 +42,10 @@ Para ejecutar este proyecto es necesario que tenga instalado PHP, MySQL, Apache 
     - password : `password`
 
 ## Demo desplegado
-
-https://mini-crm.herokuapp.com/
+http://crmweb.herokuapp.com/
 
 ## Licencia
 El proyecto es de código abierto.
 
 ## Próximos pasos
-
 Ahora puede comenzar a usar Calendar libremente.

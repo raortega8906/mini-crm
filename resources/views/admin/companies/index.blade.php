@@ -10,27 +10,27 @@
         @endif
         <div class="card">
             <div class="card-header">
-                {{ _('Empresas') }}
+                {{ __('Empresas') }}
             </div>
 
             <div>
                 <a href="{{ route('admin.companies.create') }}"
-                   class="btn btn-sm btn-primary mt-3 mx-3">{{ _('Crear nueva empresa') }}</a>
+                   class="btn btn-sm btn-primary mt-3 mx-3">{{ __('Crear nueva empresa') }}</a>
             </div>
 
             <div class="card-body">
                 <div class="card">
                     <div class="card-header">
-                        {{ _('Listado de empresas') }}
+                        {{ __('Listado de empresas') }}
                     </div>
                     <div class="card-body">
                         <table class="table table-light">
                             <thead class="thead-light">
                             <tr>
-                                <th>{{ _('Nombre') }}</th>
-                                <th>{{ _('Email') }}</th>
-                                <th>{{ _('Web') }}</th>
-                                <th>{{ _('Logo') }}</th>
+                                <th>{{ __('Nombre') }}</th>
+                                <th>{{ __('Email') }}</th>
+                                <th>{{ __('Web') }}</th>
+                                <th>{{ __('Logo') }}</th>
                                 <th>{{ __('Cant. Empleados') }}</th>
                                 <th></th>
                             </tr>
@@ -63,23 +63,23 @@
                                     </td>
                                     <td class="d-flex">
                                         <a href="{{ route('admin.companies.show', $company) }}"
-                                           class="btn btn-sm btn-primary mx-1">{{ _('Ver') }}</a>
+                                           class="btn btn-sm btn-primary mx-1">{{ __('Ver') }}</a>
                                         <a href="{{ route('admin.companies.edit', $company) }}"
-                                           class="btn btn-sm btn-success mx-1">{{ _('Editar') }}</a>
+                                           class="btn btn-sm btn-success mx-1">{{ __('Editar') }}</a>
                                         <form action="{{ route('admin.companies.destroy', $company) }}"
                                               method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger mx-1"
                                                     onclick="return confirm('Eliminar empresa definitivamente')">
-                                                {{ _('Eliminar') }}
+                                                {{ __('Eliminar') }}
                                             </button>
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5">{{ _('No hay empresas registradas') }}</td>
+                                    <td colspan="5">{{ __('No hay empresas registradas') }}</td>
                                 </tr>
                             @endforelse
                             </tbody>

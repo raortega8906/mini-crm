@@ -9,23 +9,23 @@
         @endif
         <div class="card">
             <div class="card-header">
-                {{ _('Empresa: ') }} {{ $company->name }}
+                {{ __('Empresa: ') }} {{ $company->name }}
             </div>
 
             <div>
                 <a href="{{ route('admin.companies.index') }}"
-                   class="btn btn-sm btn-primary mt-3 mx-3">{{ _('Listado de empresas') }}</a>
+                   class="btn btn-sm btn-primary mt-3 mx-3">{{ __('Listado de empresas') }}</a>
             </div>
 
             <div class="card-body">
                 <div class="card">
                     <div class="card-header">
-                        {{ _('Listado de empleados') }}
+                        {{ __('Listado de empleados') }}
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
                             <a href="{{ route('admin.companies.employees.create', $company) }}"
-                               class="btn btn-sm btn-primary">{{ _('Crear nuevo empleado') }}
+                               class="btn btn-sm btn-primary">{{ __('Crear nuevo empleado') }}
                             </a>
                         </div>
 

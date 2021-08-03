@@ -10,18 +10,18 @@
         @endif
         <div class="card">
             <div class="card-header">
-                {{ _('Editar empresa') }}
+                {{ __('Editar empresa') }}
             </div>
 
             <div>
                 <a href="{{ route('admin.companies.index') }}"
-                   class="btn btn-sm btn-primary mt-3 mx-3">{{ _('Listado de empresas') }}</a>
+                   class="btn btn-sm btn-primary mt-3 mx-3">{{ __('Listado de empresas') }}</a>
             </div>
 
             <div class="card-body">
                 <div class="card">
                     <div class="card-header">
-                        {{ _('Datos de la empresa') }}
+                        {{ __('Datos de la empresa') }}
                     </div>
                     <div class="card-body">
                         <form action="{{ route('admin.companies.update', $company) }}" method="POST"
@@ -29,27 +29,27 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="name">{{ _('Nombre') }}</label>
+                                <label for="name">{{ __('Nombre') }}</label>
                                 <input id="name" class="form-control" type="text" name="name"
                                        value="{{ $company->name }}">
                             </div>
                             <div class="form-group">
-                                <label for="email">{{ _('Email') }}</label>
+                                <label for="email">{{ __('Email') }}</label>
                                 <input id="email" class="form-control" type="email" name="email"
                                        value="{{ $company->email }}">
                             </div>
                             <div class="form-group">
-                                <label for="website">{{ _('Web') }}</label>
+                                <label for="website">{{ __('Web') }}</label>
                                 <input id="website" class="form-control" type="url" name="website"
                                        value="{{ $company->website }}">
                             </div>
                             <div class="form-group">
-                                <label for="logo">{{ _('Logo') }}</label>
+                                <label for="logo">{{ __('Logo') }}</label>
                                 <input id="logo" class="form-control" type="file" name="logo"
                                        value="{{ $company->logo }}">
                             </div>
                             <button type="submit"
-                                    class="btn btn-sm btn-success">{{ _('Actualizar la empresa') }}</button>
+                                    class="btn btn-sm btn-success">{{ __('Actualizar la empresa') }}</button>
                         </form>
                     </div>
                 </div>
