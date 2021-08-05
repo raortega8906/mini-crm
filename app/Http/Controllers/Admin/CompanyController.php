@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Company;
+use App\Models\User;
+use App\Notifications\CompanyNotification;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -30,7 +32,12 @@ class CompanyController extends Controller
             $request->logo->move('images', $dataValidated['logo']);
         }
 
-        Company::create($dataValidated);
+        $company = Company::create($dataValidated);
+        $users = User::all();
+
+        foreach ($users as $user) {
+            $user->notify(new CompanyNotification($company->id));
+        }
 
         return redirect()->route('admin.companies.create')->with('message', 'La empresa fue creada satisfactoriamente');
     }
