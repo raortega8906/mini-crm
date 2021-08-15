@@ -23,7 +23,7 @@
                     <div class="card-header">
                         {{ __('Listado de empresas') }}
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-light">
                             <thead class="thead-light">
                             <tr>

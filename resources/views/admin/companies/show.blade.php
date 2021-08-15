@@ -22,7 +22,7 @@
                     <div class="card-header">
                         {{ __('Listado de empleados') }}
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <div class="mb-3">
                             <a href="{{ route('admin.companies.employees.create', $company) }}"
                                class="btn btn-sm btn-primary">{{ __('Crear nuevo empleado') }}
