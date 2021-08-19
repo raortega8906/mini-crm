@@ -49,7 +49,9 @@
                                                      height="">
                                             </a>
                                         @else
-                                            {{ __('Sin logo') }}
+                                        <img class="img-thumbnail"
+                                            src="{{ asset('images/no_image.jpeg') }}" alt="" width="100"
+                                            height="">
                                         @endif
                                     </td>
                                     <td>

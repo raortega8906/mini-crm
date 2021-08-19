@@ -33,11 +33,11 @@ class CompanyController extends Controller
         }
 
         $company = Company::create($dataValidated);
-        $users = User::all();
+        // $users = User::all();
 
-        foreach ($users as $user) {
-            $user->notify(new CompanyNotification($company->id));
-        }
+        // foreach ($users as $user) {
+        //     $user->notify(new CompanyNotification($company->id));
+        // }
 
         return redirect()->route('admin.companies.create')->with('message', 'La empresa fue creada satisfactoriamente');
     }
