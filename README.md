@@ -19,7 +19,7 @@ Es un proyecto para gestionar empresas y sus empleados a través de un panel de 
 
 #### Objetivos adicionales
 * [ ] Use la biblioteca Datatables.net para mostrar la tabla, sin representación del lado del servidor.
-* [ ] Utilice un tema front-end más complicado como AdminLTE.
+* [x] Utilice un tema front-end más complicado como AdminLTE.
 * [x] Notificación por email: envíe un email cada vez que agregue una nueva empresa (use Mailgun or Mailtrap).
 * [ ] Haga que el proyecto sea Multi-lenguaje (usando la carpeta `resources/lang`)
 * [ ] Pruebas básicas con phpunit.
