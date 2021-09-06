@@ -27,10 +27,10 @@
                         <table class="table table-light">
                             <thead class="thead-light">
                             <tr>
+                                <th>{{ __('Empresa') }}</th>
                                 <th>{{ __('Nombre') }}</th>
                                 <th>{{ __('Email') }}</th>
                                 <th>{{ __('Web') }}</th>
-                                <th>{{ __('Logo') }}</th>
                                 <th>{{ __('Cant. Empleados') }}</th>
                                 <th></th>
                             </tr>
@@ -38,9 +38,6 @@
                             <tbody>
                             @forelse ($companies as $company)
                                 <tr>
-                                    <td>{{ $company->name }}</td>
-                                    <td>{{ $company->email }}</td>
-                                    <td>{{ $company->website }}</td>
                                     <td>
                                         @if ($company->logo)
                                             <a href="{{ asset('images/' . $company->logo) }}">
@@ -54,6 +51,9 @@
                                             height="">
                                         @endif
                                     </td>
+                                    <td>{{ $company->name }}</td>
+                                    <td>{{ $company->email }}</td>
+                                    <td>{{ $company->website }}</td>
                                     <td>
                                         @if ($company->employees->count() == 0)
                                             {{ __('Sin empleados') }}
