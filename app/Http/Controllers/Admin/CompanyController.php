@@ -37,7 +37,7 @@ class CompanyController extends Controller
 
          foreach ($users as $user) {
              if ($user->is_admin) {
-                 $user->notify(new CompanyNotification($company->id));
+                $user->notify(new CompanyNotification($company->id));
              }
          }
 
