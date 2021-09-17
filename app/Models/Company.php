@@ -15,11 +15,17 @@ class Company extends Model
         'name',
         'email',
         'website',
-        'logo'
+        'logo',
+//        'user_id'
     ];
 
     public function employees()
     {
         return $this->hasMany(Employee::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
