@@ -13,6 +13,8 @@ class CompanyTest extends TestCase
      *
      * @return void
      */
+
+    /** @test */
     public function test_a_company_has_many_employee ()
     {
         $company = new Company();
