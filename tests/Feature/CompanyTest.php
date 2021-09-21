@@ -9,11 +9,7 @@ use Tests\TestCase;
 
 class CompanyTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
+    use RefreshDatabase;
 
     /** @test */
     public function test_if_not_logged_in_redirect_to_login()
