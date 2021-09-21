@@ -43,7 +43,7 @@ scratch. This page gets rid of all links and provides the needed markup only. --
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
                             <i class="fas fa-address-card mr-2"></i>
-                            {{-- {{ $company->count().__(' clients') }} --}}
+{{--                             {{ auth()->user()->count().__(' clients') }}--}}
                             8 clientes
                         </a>
                     </div>
