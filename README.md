@@ -22,7 +22,7 @@ Es un proyecto para gestionar empresas y sus empleados a través de un panel de 
 * [x] Utilice un tema front-end más complicado como AdminLTE.
 * [x] Notificación por email: envíe un email cada vez que agregue una nueva empresa (use Mailgun or Mailtrap).
 * [ ] Haga que el proyecto sea Multi-lenguaje (usando la carpeta `resources/lang`)
-* [ ] Pruebas básicas con phpunit.
+* [x] Pruebas básicas con phpunit.
 
 ## Como instalar
 Para ejecutar este proyecto es necesario que tenga instalado PHP, MySQL, Apache o Nginx. Para mas información, consulte las recomendaciones de [Laravel](https://laravel.com/docs/8.x).
