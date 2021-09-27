@@ -27,9 +27,13 @@ class UpdateCompanyRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'email' => [
+                'required',
+                'email',
                 Rule::unique('companies')->ignore($this->company)
             ],
             'website' => [
+                'required',
+                'url',
                 Rule::unique('companies')->ignore($this->company)
             ],
             'logo' => 'image'

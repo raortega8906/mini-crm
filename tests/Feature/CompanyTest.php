@@ -20,4 +20,18 @@ class CompanyTest extends TestCase
         $response->assertRedirect('login');
     }
 
+    /** @test */
+    // public function test_can_get_a_video_from_a_listing()
+    // {
+    //     $this->withExceptionHandling();
+
+    //     $user = $this->loginAsAdmin();
+
+    //     Company::factory()->count(2)->create();
+
+    //     $this->getJson('admin/companies')
+    //         ->assertOk()
+    //         ->assertJsonCount(2);
+    // }
+
 }
