@@ -42,7 +42,7 @@ Para ejecutar este proyecto es necesario que tenga instalado PHP, MySQL, Apache 
     - password : `password`
 
 ## Demo desplegado
-http://crmweb.herokuapp.com/
+https://crmweb.herokuapp.com/
 
 ## Licencia
 El proyecto es de código abierto.
