@@ -16,7 +16,7 @@ class Company extends Model
         'email',
         'website',
         'logo',
-//        'user_id'
+        'user_id'
     ];
 
     public function employees()

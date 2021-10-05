@@ -32,7 +32,7 @@ class CompanyController extends Controller
             $request->logo->move('images', $dataValidated['logo']);
         }
 
-        $company = Company::create($dataValidated);
+        $company = auth()->user()->companies()->create($dataValidated);
         $users = User::all();
 
         foreach ($users as $user) {
