@@ -2,50 +2,51 @@
 
 # Mini-CRM
 
-Es un proyecto para gestionar empresas y sus empleados a través de un panel de administración. Este proyecto es basado en una publicación del blog de Laravel Daily, [How to Test Junior Laravel Developer Skills: Sample Project](http://laraveldaily.com/test-junior-laravel-developer-sample-project), es un proyecto de muestra para desarrolladores junior en Laravel.
+This project is designed to manage companies and their employees through an admin panel. It is based on a blog post from Laravel Daily, [How to Test Junior Laravel Developer Skills: Sample Project](http://laraveldaily.com/test-junior-laravel-developer-sample-project), and serves as a sample project for junior Laravel developers.
 
-### Objetivos
-* [x] Autenticación básica de Laravel: capacidad de iniciar sesión como administrador.
-* [x] Use semillas de base de datos (seed) para crear el primer usuario con el correo electrónico `admin@admin.com` y la contraseña `password`.
-* [x] Funcionalidad CRUD (Create / Read / Update / Delete) para los dos elementos: Empresas y Empleados.
-* [x] La tabla de BD de Empresas consta de estos campos:: Nombre (obligatorio), email, logotipo (mínimo 100×100), sitio web.
-* [x] La tabla de BD de Empleados consta de estos campos: Nombre (obligatorio), apellido (obligatorio), empresa (llave foránea para empresas), email, teléfono.
-* [x] Utilice migraciones de BD para crear los esquemas anteriores.
-* [x] Almacene los logotipos de las. Empresas en la carpeta `storage/app/public` y hágalo accesible desde el público.
-* [x] Use controladores de recursos (resource) básicos de Laravel con métodos predeterminados: index,  create, store, etc.
-* [x] Usa la función de validación de Laravel, usando clases de solicitud (request).
-* [x] Use la paginación de Laravel para mostrar. La lista de Empresas/Empleados, 10 entradas por página.
-* [x] Use Laravel/UI como tema de diseño predeterminado basado en Bootstrap, pero elimine la capacidad de registro.
+### Objectives
+* [x] Basic Laravel authentication: ability to log in as an admin.
+* [x] Use database seeds to create the first user with the email `admin@admin.com` and password `password`.
+* [x] CRUD (Create / Read / Update / Delete) functionality for two entities: Companies and Employees.
+* [x] The Companies DB table consists of these fields: Name (required), email, logo (minimum 100×100), website.
+* [x] The Employees DB table consists of these fields: First Name (required), Last Name (required), company (foreign key to companies), email, phone.
+* [x] Use DB migrations to create the above schemas.
+* [x] Store company logos in the `storage/app/public` folder and make them publicly accessible.
+* [x] Use basic Laravel resource controllers with default methods: index, create, store, etc.
+* [x] Use Laravel’s validation function, using request classes.
+* [x] Use Laravel pagination to display the list of Companies/Employees, 10 entries per page.
+* [x] Use Laravel/UI with a default Bootstrap-based design theme, but remove the registration ability.
 
-#### Objetivos adicionales
-* [ ] Use la biblioteca Datatables.net para mostrar la tabla, sin representación del lado del servidor.
-* [x] Utilice un tema front-end más complicado como AdminLTE.
-* [x] Notificación por email: envíe un email cada vez que agregue una nueva empresa (use Mailgun or Mailtrap).
-* [ ] Haga que el proyecto sea Multi-lenguaje (usando la carpeta `resources/lang`)
-* [x] Pruebas básicas con phpunit.
+#### Additional Goals
+* [ ] Use the Datatables.net library to display the table, without server-side rendering.
+* [x] Use a more complex front-end theme like AdminLTE.
+* [x] Email notification: send an email each time a new company is added (use Mailgun or Mailtrap).
+* [ ] Make the project multi-language (using the `resources/lang` folder).
+* [x] Basic testing with phpunit.
 
-## Como instalar
-Para ejecutar este proyecto es necesario que tenga instalado PHP, MySQL, Apache o Nginx. Para mas información, consulte las recomendaciones de [Laravel](https://laravel.com/docs/8.x).
+## Installation
+To run this project, you need PHP, MySQL, Apache, or Nginx installed. For more information, see the [Laravel recommendations](https://laravel.com/docs/8.x).
 
-### Pasos:
-1. Clonar el repositorio : `git clone https://github.com/raortega8906/mini-crm.git`
+### Steps:
+1. Clone the repository: `git clone https://github.com/raortega8906/mini-crm.git`
 2. `$ cd Mini-CRM`
 3. `$ composer install`
 4. `$ cp .env.example .env`
 5. `$ php artisan key:generate`
-6. Crear BD en **MySQL** o **SQLite**
-7. Credenciales de BD en el archivo `.env`
+6. Create a database in **MySQL** or **SQLite**
+7. Add database credentials in the `.env` file
 8. `$ php artisan migrate --seed`
 9. `$ php artisan serve`
-10. Iniciar sesión con:
-    - email : `admin@admin.com`
-    - password : `password`
+10. Log in with:
+    - email: `admin@admin.com`
+    - password: `password`
 
-## Demo desplegado
+## Live Demo
 https://minicrm.wpcache.es/
 
-## Licencia
-El proyecto es de código abierto.
+## License
+This project is open-source.
 
-## Próximos pasos
-Ahora puede comenzar a usar Mini-CRM libremente.
+## Next Steps
+You can now start using Mini-CRM freely.
+
